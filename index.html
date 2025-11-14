@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beastforge: Rogue Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="viewport">
+    <header class="panel panel--header">
+      <h1>Beastforge: Rogue Trainer</h1>
+      <p class="subtitle">Capture every foe. Build your squad. Survive the next battle.</p>
+    </header>
+
+    <main class="panel panel--main">
+      <section class="panel panel--battle" aria-label="Battlefield">
+        <div class="combatant combatant--player" id="player-panel">
+          <h2>Trainer Squad</h2>
+          <div class="pet-card" id="player-active"></div>
+          <div class="pet-roster" id="roster"></div>
+        </div>
+        <div class="battle-screen" id="battle-screen">
+          <div class="battle-characters">
+            <div class="sprite player-sprite" id="player-sprite" aria-live="polite"></div>
+            <div class="vs">VS</div>
+            <div class="sprite enemy-sprite" id="enemy-sprite" aria-live="polite"></div>
+          </div>
+          <div class="battle-stats">
+            <div class="stat-block" id="player-stats"></div>
+            <div class="stat-block" id="enemy-stats"></div>
+          </div>
+          <div class="ability-bar" id="ability-bar"></div>
+        </div>
+        <div class="combatant combatant--enemy" id="enemy-panel">
+          <h2>Wild Threat</h2>
+          <div class="pet-card" id="enemy-card"></div>
+        </div>
+      </section>
+
+      <section class="panel panel--log" aria-label="Battle log">
+        <h2>Expedition Log</h2>
+        <div class="log" id="log" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="panel panel--footer">
+      <p>Press <span class="key">R</span> to rest and reorganise between battles.</p>
+    </footer>
+  </div>
+
+  <dialog id="starter-dialog" class="dialog">
+    <form method="dialog">
+      <h2>Choose your first companion</h2>
+      <p>Select a beast to begin your expedition.</p>
+      <div id="starter-options" class="starter-options"></div>
+    </form>
+  </dialog>
+
+  <dialog id="gameover-dialog" class="dialog">
+    <form method="dialog">
+      <h2>Expedition Lost</h2>
+      <p id="gameover-message"></p>
+      <button value="restart" class="btn">Launch new expedition</button>
+    </form>
+  </dialog>
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
